@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .container
+    .col-sm-10
+      .row
+        h1= title
+        form(action='/add', method='post')
+          label.control-label Название задачи:
+          input.form-control(type='text', name='name', placeholder='Введите название задачи', required)
+          label.control-label Название задачи:
+          input.form-control(type='text', name='description', placeholder='Введите название задачи', required)
+          button.btn.btn-primary(type='submit') Добавить

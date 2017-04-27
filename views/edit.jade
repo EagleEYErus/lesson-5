@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .container
+    .col-sm-10
+      .row
+        h1= title
+        form(action='/edit', method='post')
+          input.form-control(type='hidden', name='id', value='#{task.id}')
+          label.control-label Название задачи:
+          input.form-control(type='text', name='name', placeholder='Введите название задачи', required, value='#{task.name}')
+          label.control-label Название задачи:
+          input.form-control(type='text', name='description', placeholder='Введите название задачи', required, value='#{task.description}')
+          button.btn.btn-primary(type='submit') Добавить

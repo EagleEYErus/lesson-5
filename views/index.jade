@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .container
+    .col-sm-10
+      h1= title
+      .text-right
+        a(href='/add') + Добавить задачу
+      table.table.table-bordered.table-hover
+        thead
+          tr
+            th id
+            th Название задачи
+            th Описание задачи
+            th
+            th
+        tbody
+          each task in tasks
+            tr
+              td= task.id
+              td= task.name
+              td= task.description
+              td
+                form(action='/edit/id/#{task.id}', method='get')
+                  button.btn.btn-default(type='submit')
+                    span.glyphicon.glyphicon-pencil
+              td
+                form(action='/id/#{task.id}', method='get')
+                  button.btn.btn-default(type='submit')
+                    span.glyphicon.glyphicon-trash
